@@ -34,7 +34,7 @@
   /* Set up the map with initial center and zoom level */
   var map = L.map('map', {
     center: [26.54, -27.87], // EDIT latitude, longitude to re-center map
-    zoom: 4,  // EDIT from 1 to 18 -- decrease to zoom out, increase to zoom in
+    zoom: 12,  // EDIT from 1 to 18 -- decrease to zoom out, increase to zoom in
     scrollWheelZoom: false
   });
 
@@ -57,7 +57,7 @@
   // controlLayers.addBaseLayer(terrain, 'Stamen Terrain basemap');
 
   /* Display a blue point marker with pop-up text */
-  L.marker [26.54, -27.87].addTo(map) // EDIT latitude, longitude to re-position marker
+  L.marker [26.54, -27.87] .addTo(map) // EDIT latitude, longitude to re-position marker
   .bindPopup "Dr Moagi, Specimen to collect"; // 
 
   /* Upload Latitude/Longitude markers from data.csv file, show Title in pop-up, and override initial center and zoom to fit all in map */
