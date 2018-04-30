@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
-    <title>Marker Clustering</title>
+    <title>KML Layers</title>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -23,38 +23,27 @@
     <script>
 
       function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: {lat: -26.548410, lng: 27.874684}
+      });
 
-        var map = <iframe src="https://www.google.com/maps/d/embed?mid=1-MBAyABnS63A977gn4bW-ePjy2lMj3Xs" width="640" height="480"></iframe>('map'), {
-          zoom: 3,
-          center: {lat: -28.024, lng: 140.887}
+        var ctaLayer = new google.maps.KmlLayer({
+          url: 'https://drive.google.com/open?id=1-MBAyABnS63A977gn4bW-ePjy2lMj3Xs&usp=sharing',
+          map: map
         });
-
-        // Create an array of alphabetical characters used to label the markers.
-        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-        // Add some markers to the map.
-        // Note: The code uses the JavaScript Array.prototype.map() method to
-        // create an array of markers based on a given "locations" array.
-        // The map() method here has nothing to do with the Google Maps API.
-        var markers = locations.map(function(location, i) {
-          return new google.maps.Marker({
-            position: location,
-            label: labels[i % labels.length]
-          });
-        });
-
-        // Add a marker clusterer to manage the markers.
-        var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
-      var locations = [
-        
-      ]
-    </script>
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZCfMhE4HxKlXyVCq6siaO6NHp8xBp_I0&callback=initMap">
+    </script>
+  </body>
+</html> }
+      
+       
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZCfMhE4HxKlXyVCq6siaO6NHp8xBp_I0&callback=initMap">
     </script>
   </body>
 </html>
